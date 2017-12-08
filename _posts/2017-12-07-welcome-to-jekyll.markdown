@@ -2,24 +2,47 @@
 layout: post
 title:  "Welcome to Jekyll!!"
 date:   2017-12-07 12:33:19 +0000
-categories: jekyll update
+categories: jekyll
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+It's my very first entry on that blog. I tried to run a few previously but without any success ;)
+Let'see if this time it'll look differently.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+I choose Jekyll to learn something new and use GitHub to host my blog. I'm using Ubuntu for my everyday work so I would like to have that first post usable some information about starting using Jekyll on Ubuntu machine.
 
-Jekyll also offers powerful support for code snippets:
+**Don't do sudo apt-get install gem** :)
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+Instead:
+
+* Install Ruby [https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh]:
+{% highlight bash %}
+cd $HOME
+sudo apt-get update 
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+​
+rbenv install 2.4.2
+rbenv install 2.4.2
+ruby -v
 {% endhighlight %}
+* If you switched to ZSH in mean time [​https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh]:
+{% highlight bash %}
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshenv
+echo 'eval "$(rbenv init -)"' >> ~/.zshenv
+echo 'source $HOME/.zshenv' >> ~/.zshrc
+exec $SHELL
+{% endhighlight %}
+* Install Jekyll
+`gem install jekyll bundler`
+* Start it:
+`bundle exec jekyll serve`
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+And you should see something in browser when you open http://localhost:4000.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+[https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh]: https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh
+[​https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh]: https://coderwall.com/p/0o64yq/rbenv-issues-when-switching-to-zsh
